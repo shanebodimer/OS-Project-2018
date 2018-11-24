@@ -14,11 +14,16 @@ export default class Single extends React.Component {
 
     // Set initial state
     this.state = {
-      name: ""
+      testType: "single"
     };
 
     // Bind state operators
     this.runTest = this.runTest.bind(this);
+    this.testType = this.testType.bind(this);
+  }
+
+  testType(type) {
+    this.setState({ testType: type });
   }
 
   runTest(params) {
@@ -31,8 +36,12 @@ export default class Single extends React.Component {
     return (
       <div className="single">
         <div className="row">
-          <LHS runTest={this.runTest} />
-          <RHS />
+          <LHS
+            testType={this.testType}
+            type={this.state.testType}
+            runTest={this.runTest}
+          />
+          <RHS testType={this.state.testType} />
         </div>
       </div>
     );

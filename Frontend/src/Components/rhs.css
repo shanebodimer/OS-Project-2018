@@ -1,6 +1,18 @@
 .rhs {
   padding: 0px 0px 0px 22px !important;
-  height: calc(100vh - 194px);
+  height: calc(100vh - 230px);
+}
+
+.title {
+  height: 36px;
+  /* width: 100%; */
+  padding: 0px 10px !important;
+  border-bottom: 2px solid #ebecf0;
+  background: #f4f5f7;
+
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between; */
 }
 
 .rhs .inside {

@@ -5,7 +5,7 @@ import { Route, BrowserRouter } from "react-router-dom";
 import Root from "./Views/Root.jsx";
 
 // Public views
-import Single from "./Views/Single.jsx";
+import Test from "./Views/Test.jsx";
 
 export default class App extends React.Component {
   render() {
@@ -13,7 +13,7 @@ export default class App extends React.Component {
       <BrowserRouter>
         <Root>
           {/* Public */}
-          <Route exact path={"/"} render={props => <Single {...props} />} />
+          <Route exact path={"/"} render={props => <Test {...props} />} />
 
           {/* Private */}
           {/* <Route path={'/private'} render={props => <Private {...props} />} /> */}

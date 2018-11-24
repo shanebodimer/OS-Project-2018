@@ -24,6 +24,7 @@ export default class LHS extends React.Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.submitTest = this.submitTest.bind(this);
+    this.updateTestType = this.updateTestType.bind(this);
   }
 
   handleChange(event) {
@@ -32,8 +33,12 @@ export default class LHS extends React.Component {
 
   submitTest(params) {
     console.log(params);
-
     // this.props.runTest(params);
+  }
+
+  updateTestType(type) {
+    console.log("yo", type);
+    this.props.testType(type);
   }
 
   render() {
@@ -42,6 +47,7 @@ export default class LHS extends React.Component {
         <Tabs
           tabs={[
             {
+              type: "single",
               label: (
                 <small>
                   <i className="far fa-image mr-1" />
@@ -51,6 +57,7 @@ export default class LHS extends React.Component {
               content: <SingleForm submitTest={this.submitTest} />
             },
             {
+              type: "batch",
               label: (
                 <small>
                   <i className="far fa-images mr-1" />
@@ -60,7 +67,8 @@ export default class LHS extends React.Component {
               content: <BatchForm submitTest={this.submitTest} />
             }
           ]}
-          onSelect={(tab, index) => console.log("Selected Tab", index + 1)}
+          onSelect={tab => this.updateTestType(tab.type)}
+          selected={this.props.type === "single" ? 0 : 1}
         />
       </div>
     );
