@@ -32,12 +32,10 @@ export default class LHS extends React.Component {
   }
 
   submitTest(params) {
-    console.log(params);
-    // this.props.runTest(params);
+    this.props.runTest(params);
   }
 
   updateTestType(type) {
-    console.log("yo", type);
     this.props.testType(type);
   }
 

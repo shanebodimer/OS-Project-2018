@@ -14,7 +14,8 @@ export default class Single extends React.Component {
 
     // Set initial state
     this.state = {
-      testType: "single"
+      testType: "single",
+      running: false
     };
 
     // Bind state operators
@@ -27,8 +28,8 @@ export default class Single extends React.Component {
   }
 
   runTest(params) {
-    // Search
-    console.log(params);
+    this.setState({ running: true });
+    run(params);
     // run("params").then(res => {});
   }
 
@@ -41,7 +42,7 @@ export default class Single extends React.Component {
             type={this.state.testType}
             runTest={this.runTest}
           />
-          <RHS testType={this.state.testType} />
+          <RHS running={this.state.running} testType={this.state.testType} />
         </div>
       </div>
     );

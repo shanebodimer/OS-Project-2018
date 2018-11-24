@@ -8,7 +8,7 @@ export default class ManyForm extends React.Component {
     super(props);
 
     this.state = {
-      size: 100,
+      size: "100x100",
       iterations: 10,
       nodes: 1,
       threads: 1,
@@ -23,6 +23,21 @@ export default class ManyForm extends React.Component {
 
   handleChange(event) {
     this.setState({ [event.target.name]: event.target.value });
+
+    // Update default values
+    switch (event.target.value) {
+      case "Max iterations":
+        this.setState({ from: 10, to: 20 });
+        break;
+      case "Number of nodes":
+        this.setState({ from: 1, to: 2 });
+        break;
+      case "Threads per node":
+        this.setState({ from: 1, to: 2 });
+        break;
+      default:
+        break;
+    }
   }
 
   submitBatchTest() {

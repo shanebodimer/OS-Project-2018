@@ -4,12 +4,17 @@ import axios from "axios";
 export const run = params =>
   axios
     .post(
-      `http://64.251.149.246/api/run.php`,
-      { hello: "world" },
-      { headers: { "Content-Type": "application/json" } }
+      `http://64.251.149.246/api/run.php?`,
+      { params },
+      {
+        headers: {
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*"
+        }
+      }
     )
     .then(function(response) {
-      console.log(response);
+      console.log(response.data);
       return response;
     })
     .catch(function(error) {

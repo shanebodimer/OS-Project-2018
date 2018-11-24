@@ -8,7 +8,7 @@ export default class SingleForm extends React.Component {
     super(props);
 
     this.state = {
-      size: 100,
+      size: "100x100",
       iterations: 10,
       nodes: 1,
       threads: 1

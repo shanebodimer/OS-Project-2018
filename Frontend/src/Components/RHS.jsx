@@ -39,13 +39,13 @@ export default class RHS extends React.Component {
           <small>
             {this.props.testType === "single" ? (
               <span>
-                <i className="far fa-image mr-1 text-primary" />
-                Running single test
+                <i className="far fa-image fa-fw mr-1 text-primary" />
+                Single test
               </span>
             ) : (
               <span>
-                <i className="far fa-images mr-1 text-primary" />
-                Running batch test
+                <i className="far fa-images fa-fw mr-1 text-primary" />
+                Batch test
               </span>
             )}
           </small>
