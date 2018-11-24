@@ -39,3 +39,19 @@
 .row.options {
   padding: 0px !important;
 }
+
+.row.options small,
+.modifier {
+  color: #007bff;
+  font-weight: 700;
+}
+
+.styled__Nav-sc-716rt7-3 {
+  background: #f4f5f7;
+}
+.styled__NavLine-sc-716rt7-4 {
+  margin-left: -8px;
+}
+.styled__NavLine-sc-716rt7-4 {
+  width: 100%;
+}
