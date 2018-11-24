@@ -1,0 +1,17 @@
+.rhs {
+  padding: 0px 0px 0px 22px !important;
+  height: calc(100vh - 194px);
+}
+
+.rhs .inside {
+  padding: 20px;
+  height: 100%;
+  background: white;
+  border-bottom-right-radius: 8px;
+  box-shadow: rgba(50, 50, 93, 0.1) 0px 15px 35px 0px,
+    rgba(0, 0, 0, 0.07) 0px 5px 15px 0px;
+}
+
+.bg-darkblue {
+  background: #0052cc !important;
+}

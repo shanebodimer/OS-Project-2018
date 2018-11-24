@@ -1,0 +1,41 @@
+.lhs {
+  padding: 0px !important;
+  /* padding: 15px 20px !important; */
+  background: white;
+  border-bottom-left-radius: 8px;
+  height: calc(100vh - 194px);
+  box-shadow: rgba(50, 50, 93, 0.1) 0px 15px 35px 0px,
+    rgba(0, 0, 0, 0.07) 0px 5px 15px 0px;
+}
+
+.lhs h3 {
+  /* font-weight: */
+  margin: 10px 0px 30px 0px;
+}
+
+.lhs .body {
+  padding: 15px 20px !important;
+}
+
+.lhs .label {
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  margin-bottom: -2px;
+  padding: 3px;
+  background: #dbdcde;
+}
+
+.css-1caesrm {
+  border-color: #f4f5f7 !important;
+}
+
+.at-select {
+  height: 45px !important;
+  padding: 0px !important;
+  background: #f4f5f7 !important;
+  border-color: #f4f5f7 !important;
+}
+
+.row.options {
+  padding: 0px !important;
+}

@@ -1,0 +1,88 @@
+<html>
+
+<head>
+    <title>Multithreading Tests</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-exp.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css">
+</head>
+
+<body>
+    <!-- Nav -->
+    <div class="nav">
+        <div class="container grid-custom">2018 Fall Operating Systems Project</div>
+    </div>
+
+    <!-- Content -->
+    <div class="container grid-custom">
+
+        <h2>Multithreaded Cluster Tests</h2>
+        <span>Select, modify, and run tests directly on the RPi cluster</span>
+        <br>
+        <br>
+
+
+
+        <div id="test1" class="test shadow">
+            <div class="about">
+                <div class="triangle purple">
+                    <h4>Title<br>Here</h4>subtitle
+                </div>
+                <div class="description">The readers-writers problem is a common computing problem in which
+                    many threads try to access the same shared resource at one time.
+                    <hr> This test runs a C++ program that shares access to common text files while threads
+                    attempt to read and write to them.
+                </div>
+            </div>
+            <div class="run">
+                <div class="main-run">
+                    <div class="input-group">
+                        <span class="input-group-addon">Threads:</span>
+                        <input type="number" class="form-input" value="1">
+                    </div>
+                    <button onClick="submitForm()" type="button" class="btn btn-lg btn-primary">
+                        Execute
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+
+                <button class="btn btn-sm btn-outline-primary multiple">Run multiple tests</button>
+                <button onClick="viewReport(1)" class="btn btn-sm btn-outline-primary">View report</button>
+
+
+
+
+            </div>
+
+
+
+
+        </div>
+        <div id="report1" class="test-content">
+            <div class="triangle-continue"></div>
+            <div class="test-text">
+                <h1 class="text-primary">Results</h1>
+                200 tests over 30 thread configurations
+            </div>
+
+
+
+            <div class="triangle-bottom"></div>
+
+
+
+        </div>
+
+    </div>
+    <!-- End container -->
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" type="text/javascript"></script>
+    <script src="scripts.js" type="text/javascript"></script>
+</body>
+
+</html>
