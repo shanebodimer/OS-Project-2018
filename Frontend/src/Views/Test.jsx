@@ -7,6 +7,7 @@ import RHS from "../Components/RHS.jsx";
 
 // Utilities
 import { run } from "../Utilities/api.jsx";
+import { throws } from "assert";
 
 export default class Single extends React.Component {
   constructor(props) {
@@ -15,7 +16,13 @@ export default class Single extends React.Component {
     // Set initial state
     this.state = {
       testType: "single",
-      running: false
+      running: false,
+      key: false,
+      speed: false,
+      size: false,
+      max: false,
+      nodes: false,
+      threads: false
     };
 
     // Bind state operators
@@ -28,9 +35,18 @@ export default class Single extends React.Component {
   }
 
   runTest(params) {
-    this.setState({ running: true });
-    run(params);
-    // run("params").then(res => {});
+    // this.setState({});
+    let key = Math.floor(Math.random() * 1000000000).toFixed(0);
+    this.setState({ running: true, key: key, speed: false, size: false });
+    run(key, params).then(res => {
+      this.setState({
+        speed: res,
+        size: params.size,
+        max: params.iterations,
+        nodes: params.nodes,
+        threads: params.threads
+      });
+    });
   }
 
   render() {
@@ -42,7 +58,16 @@ export default class Single extends React.Component {
             type={this.state.testType}
             runTest={this.runTest}
           />
-          <RHS running={this.state.running} testType={this.state.testType} />
+          <RHS
+            key={this.state.key}
+            running={this.state.running}
+            testType={this.state.testType}
+            speed={this.state.speed}
+            size={this.state.size}
+            max={this.state.max}
+            nodes={this.state.nodes}
+            threads={this.state.threads}
+          />
         </div>
       </div>
     );

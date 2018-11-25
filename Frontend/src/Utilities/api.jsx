@@ -1,11 +1,11 @@
 import axios from "axios";
 
 // Search
-export const run = params =>
+export const run = (key, params) =>
   axios
     .post(
       `http://64.251.149.246/api/run.php?`,
-      { params },
+      { key: key, params },
       {
         headers: {
           "Content-Type": "application/json",
@@ -15,7 +15,7 @@ export const run = params =>
     )
     .then(function(response) {
       console.log(response.data);
-      return response;
+      return response.data.toFixed(5);
     })
     .catch(function(error) {
       console.log("run() error:", error);

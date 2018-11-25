@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 
 import { ProgressTracker } from "@atlaskit/progress-tracker";
 
+import SingleResult from "./SingleResult.jsx";
+import BatchResult from "./BatchResult.jsx";
+
 import { run } from "../Utilities/api.jsx";
 
 import "./rhs.css";
@@ -16,20 +19,13 @@ export default class RHS extends React.Component {
     };
 
     // Demo progress
-    setInterval(
-      () =>
-        this.setState({
-          progress: this.state.progress < 100 ? this.state.progress + 10 : 0
-        }),
-      500
-    );
-
-    this.runTest = this.runTest.bind(this);
-  }
-
-  runTest() {
-    // Search
-    run("params").then(res => {});
+    // setInterval(
+    //   () =>
+    //     this.setState({
+    //       progress: this.state.progress < 100 ? this.state.progress + 10 : 0
+    //     }),
+    //   500
+    // );
   }
 
   render() {
@@ -52,12 +48,17 @@ export default class RHS extends React.Component {
         </div>
 
         <div className="inside">
-          <div className="progress">
-            <div
-              className="progress-bar progress-bar-striped progress-bar-animated"
-              style={{ width: this.state.progress + "%" }}
+          {this.props.testType === "single" ? (
+            <SingleResult
+              speed={this.props.speed}
+              size={this.props.size}
+              max={this.props.max}
+              nodes={this.props.nodes}
+              threads={this.props.threads}
             />
-          </div>
+          ) : (
+            <BatchResult />
+          )}
         </div>
       </div>
     );
