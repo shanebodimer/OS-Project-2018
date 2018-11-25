@@ -22,7 +22,8 @@ export default class Single extends React.Component {
       size: false,
       max: false,
       nodes: false,
-      threads: false
+      threads: false,
+      modifier: false
     };
 
     // Bind state operators
@@ -44,7 +45,8 @@ export default class Single extends React.Component {
         size: params.size,
         max: params.iterations,
         nodes: params.nodes,
-        threads: params.threads
+        threads: params.threads,
+        modifier: params.modifier
       });
     });
   }
@@ -67,6 +69,7 @@ export default class Single extends React.Component {
             max={this.state.max}
             nodes={this.state.nodes}
             threads={this.state.threads}
+            modifier={this.state.modifier}
           />
         </div>
       </div>

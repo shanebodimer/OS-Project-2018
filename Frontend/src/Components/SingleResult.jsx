@@ -8,7 +8,7 @@ export default class SingleResult extends React.Component {
         <center>
           {this.props.size && (
             <img
-              src={"http://64.251.149.246/api/img.bmp"}
+              src={this.props.size && "http://64.251.149.246/api/img.bmp"}
               className="result-img"
             />
           )}

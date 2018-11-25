@@ -57,7 +57,7 @@ export default class RHS extends React.Component {
               threads={this.props.threads}
             />
           ) : (
-            <BatchResult />
+            <BatchResult mod={this.props.modifier} />
           )}
         </div>
       </div>
