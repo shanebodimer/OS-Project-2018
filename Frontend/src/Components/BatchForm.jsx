@@ -12,9 +12,9 @@ export default class ManyForm extends React.Component {
       iterations: 10,
       nodes: 1,
       threads: 1,
-      modifier: "Max iterations",
-      from: 10,
-      to: 20
+      modifier: "Number of worker nodes",
+      from: 1,
+      to: 2
     };
 
     this.handleChange = this.handleChange.bind(this);
