@@ -46,7 +46,8 @@ export default class Single extends React.Component {
         max: params.iterations,
         nodes: params.nodes,
         threads: params.threads,
-        modifier: params.modifier
+        modifier: params.modifier,
+        running: false
       });
     });
   }
@@ -59,6 +60,7 @@ export default class Single extends React.Component {
             testType={this.testType}
             type={this.state.testType}
             runTest={this.runTest}
+            running={this.state.running}
           />
           <RHS
             key={this.state.key}
@@ -70,6 +72,7 @@ export default class Single extends React.Component {
             nodes={this.state.nodes}
             threads={this.state.threads}
             modifier={this.state.modifier}
+            running={this.state.running}
           />
         </div>
       </div>

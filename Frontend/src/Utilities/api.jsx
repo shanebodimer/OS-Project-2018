@@ -16,6 +16,7 @@ export const run = (key, params) =>
     .then(function(response) {
       console.log(response.data);
       return response.data.toFixed(5);
+      // return 1;
     })
     .catch(function(error) {
       console.log("run() error:", error);
@@ -35,7 +36,7 @@ export const fetch = () =>
       }
     )
     .then(function(response) {
-      console.log(response.data);
+      // console.log(response.data);
       return response.data;
     })
     .catch(function(error) {

@@ -1,22 +1,45 @@
 import React from "react";
 
 export default class SingleResult extends React.Component {
+  constructor(props) {
+    super(props);
+
+    // Set initial state
+    this.state = {
+      imageHash: Date.now()
+    };
+  }
+
   render() {
+    console.log(this.props.running);
     return (
       <div>
         {/* Image */}
         <center>
           {this.props.size && (
             <img
-              src={this.props.size && "http://64.251.149.246/api/img.bmp"}
+              src={`http://64.251.149.246/api/frac.bmp?${this.state.imageHash}`}
               className="result-img"
             />
           )}
-          {!this.props.size && <div className="placeholder" />}
-          <pre>{this.props.size ? this.props.size : "Waiting..."}</pre>
+          {!this.props.size && (
+            <div className="placeholder">
+              {this.props.running && (
+                <i className="fas fa-spinner fa-spin fa-5x text-white" />
+              )}
+            </div>
+          )}
+          <pre>
+            {this.props.size ? (
+              this.props.size
+            ) : (
+              <span>{this.props.running ? "Running" : "Waiting..."}</span>
+            )}
+          </pre>
         </center>
         <br />
         <br />
+
         {/* Results */}
         {this.props.size && (
           <div className="results">
@@ -46,7 +69,7 @@ export default class SingleResult extends React.Component {
                 </h6>
               </pre>
             </div>
-            <div className="conclusion">
+            {/* <div className="conclusion">
               {this.props.nodes !== 1 ||
               this.props.max !== 10 ||
               this.props.threads !== 1 ? (
@@ -69,7 +92,7 @@ export default class SingleResult extends React.Component {
                   test case
                 </center>
               )}
-            </div>
+            </div> */}
           </div>
         )}
       </div>

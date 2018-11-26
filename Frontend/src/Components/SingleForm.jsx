@@ -46,23 +46,27 @@ export default class SingleForm extends React.Component {
           title={"Image size"}
           handleChange={this.handleChange}
           value={this.state.size}
-          options={["100x100", "200x200", "300x300", "400x400"]}
+          options={["100x100", "250x250", "500x500", "750x750", "1000x1000"]}
         />
 
-        <Dropdown
-          name="iterations"
-          title={"Max iterations"}
-          handleChange={this.handleChange}
-          value={this.state.iterations}
-          options={[10, 20, 50, 75, 100]}
-        />
+        <FormGroup>
+          <small>Max iterations</small>
+          <Input
+            type="number"
+            min={0}
+            name={"iterations"}
+            className="at-select number"
+            value={this.state.iterations}
+            onChange={this.handleChange}
+          />
+        </FormGroup>
 
         <Dropdown
           name="nodes"
-          title={"Number of nodes"}
+          title={"Number of worker nodes"}
           handleChange={this.handleChange}
           value={this.state.nodes}
-          options={[1, 2, 3, 4]}
+          options={[1, 2, 3]}
         />
 
         <Dropdown
@@ -70,7 +74,7 @@ export default class SingleForm extends React.Component {
           title={"Threads per node"}
           handleChange={this.handleChange}
           value={this.state.threads}
-          options={[1, 2, 3, 4]}
+          options={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
         />
 
         <br />

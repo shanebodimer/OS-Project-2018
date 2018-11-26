@@ -55,6 +55,7 @@ export default class RHS extends React.Component {
               max={this.props.max}
               nodes={this.props.nodes}
               threads={this.props.threads}
+              running={this.props.running}
             />
           ) : (
             <BatchResult mod={this.props.modifier} />
