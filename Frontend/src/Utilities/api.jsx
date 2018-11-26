@@ -15,7 +15,7 @@ export const run = (key, params) =>
     )
     .then(function(response) {
       console.log(response.data);
-      return response.data.toFixed(5);
+      return response.data.toFixed(4);
       // return 1;
     })
     .catch(function(error) {
@@ -26,7 +26,7 @@ export const run = (key, params) =>
 export const fetch = () =>
   axios
     .post(
-      `http://csspaste.com/test.json`,
+      `http://64.251.149.246/api/results.json`,
       {},
       {
         headers: {
@@ -36,7 +36,7 @@ export const fetch = () =>
       }
     )
     .then(function(response) {
-      // console.log(response.data);
+      console.log(response.data);
       return response.data;
     })
     .catch(function(error) {

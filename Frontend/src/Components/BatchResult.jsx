@@ -33,7 +33,7 @@ export default class BatchResult extends React.Component {
             data: res
           });
         }),
-      2000
+      500
     );
 
     // Bind state operators
@@ -55,7 +55,6 @@ export default class BatchResult extends React.Component {
           <h4>{this.props.mod ? this.props.mod : "Max iterations"} vs. Time</h4>
           in seconds
           <br />
-          <br />
           {this.state.data && (
             <LineChart
               width={730}
@@ -66,16 +65,24 @@ export default class BatchResult extends React.Component {
               <CartesianGrid strokeDasharray="5 5" />
               <XAxis dataKey="name" strokeWidth={2} />
               <Tooltip />
-              <YAxis dataKey="time" strokeWidth={2} />
-              <Legend />
+              <YAxis dataKey="time" strokeWidth={2} domain={["auto", "auto"]} />
+              {/* <Legend /> */}
               <Line
                 type="monotone"
                 dataKey="time"
                 stroke="#0052cc"
                 strokeWidth={4}
+                animationDuration={100}
               />
             </LineChart>
           )}
+          <a
+            className="btn btn-outline-primary btn-sm"
+            href="http://64.251.149.246/api/results.json"
+            target="blank"
+          >
+            View raw data <i className="fas fa-external-link-alt" />
+          </a>
         </center>
       </div>
     );

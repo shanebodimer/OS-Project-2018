@@ -29,7 +29,7 @@ export default class ManyForm extends React.Component {
       case "Max iterations":
         this.setState({ from: 10, to: 20 });
         break;
-      case "Number of nodes":
+      case "Number of worker nodes":
         this.setState({ from: 1, to: 2 });
         break;
       case "Threads per node":
@@ -41,6 +41,7 @@ export default class ManyForm extends React.Component {
   }
 
   submitBatchTest() {
+    console.log(this.state.to, this.state.from);
     let params = {
       type: "batch",
       modifier: this.state.modifier,
@@ -72,7 +73,7 @@ export default class ManyForm extends React.Component {
             onChange={this.handleChange}
           >
             <option>Max iterations</option>
-            <option>Number of nodes</option>
+            <option>Number of worker nodes</option>
             <option>Threads per node</option>
           </Input>
         </FormGroup>
@@ -82,17 +83,21 @@ export default class ManyForm extends React.Component {
           title={"Image size"}
           handleChange={this.handleChange}
           value={this.state.size}
-          options={["100x100", "200x200", "300x300", "400x400"]}
+          options={["100x100", "250x250", "500x500", "750x750", "1000x1000"]}
         />
 
         {this.state.modifier !== "Max iterations" && (
-          <Dropdown
-            name="iterations"
-            title={"Max iterations"}
-            handleChange={this.handleChange}
-            value={this.state.iterations}
-            options={[10, 20, 50, 75, 100]}
-          />
+          <FormGroup>
+            <small>Max iterations</small>
+            <Input
+              type="number"
+              min={0}
+              name="iterations"
+              className="at-select number"
+              value={this.state.iterations}
+              onChange={this.handleChange}
+            />
+          </FormGroup>
         )}
         {this.state.modifier === "Max iterations" && (
           <div className="row options">
@@ -117,33 +122,33 @@ export default class ManyForm extends React.Component {
           </div>
         )}
 
-        {this.state.modifier !== "Number of nodes" && (
+        {this.state.modifier !== "Number of worker nodes" && (
           <Dropdown
             name="nodes"
-            title={"Number of nodes"}
+            title={"Number of worker nodes"}
             handleChange={this.handleChange}
             value={this.state.nodes}
-            options={[1, 2, 3, 4]}
+            options={[1, 2, 3]}
           />
         )}
-        {this.state.modifier === "Number of nodes" && (
+        {this.state.modifier === "Number of worker nodes" && (
           <div className="row options">
             <div className="col-md">
               <Dropdown
                 name="from"
-                title={"From number of nodes"}
+                title={"From # of worker nodes"}
                 handleChange={this.handleChange}
                 value={this.state.from}
-                options={[1, 2, 3, 4]}
+                options={[1, 2, 3]}
               />
             </div>
             <div className="col-md">
               <Dropdown
                 name="to"
-                title={"To number of nodes"}
+                title={"To # of worker nodes"}
                 handleChange={this.handleChange}
                 value={this.state.to}
-                options={[1, 2, 3, 4]}
+                options={[1, 2, 3]}
               />
             </div>
           </div>
@@ -155,7 +160,7 @@ export default class ManyForm extends React.Component {
             title={"Threads per node"}
             handleChange={this.handleChange}
             value={this.state.threads}
-            options={[1, 2, 3, 4]}
+            options={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
           />
         )}
         {this.state.modifier === "Threads per node" && (
@@ -166,7 +171,7 @@ export default class ManyForm extends React.Component {
                 title={"From threads per node"}
                 handleChange={this.handleChange}
                 value={this.state.from}
-                options={[1, 2, 3, 4]}
+                options={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
               />
             </div>
             <div className="col-md">
@@ -175,7 +180,7 @@ export default class ManyForm extends React.Component {
                 title={"To threads per node"}
                 handleChange={this.handleChange}
                 value={this.state.to}
-                options={[1, 2, 3, 4]}
+                options={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
               />
             </div>
           </div>
