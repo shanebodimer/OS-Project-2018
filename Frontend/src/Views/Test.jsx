@@ -13,6 +13,8 @@ export default class Single extends React.Component {
   constructor(props) {
     super(props);
 
+    document.title = "Mandelbrot Fractal Set Generator";
+
     // Set initial state
     this.state = {
       testType: "single",

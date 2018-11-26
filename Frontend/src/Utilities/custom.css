@@ -13,7 +13,7 @@ body {
   color: #424770;
   background-color: #efefef;
 
-  overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 /* Selection */

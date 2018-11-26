@@ -47,7 +47,7 @@ export default class RHS extends React.Component {
           </small>
         </div>
 
-        <div className="inside">
+        <div className="inside d-flex align-items-center justify-content-center">
           {this.props.testType === "single" ? (
             <SingleResult
               speed={this.props.speed}

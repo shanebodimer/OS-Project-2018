@@ -51,7 +51,6 @@ export default class BatchResult extends React.Component {
     return (
       <div>
         <center>
-          <br />
           <h4>{this.props.mod ? this.props.mod : "Max iterations"} vs. Time</h4>
           in seconds
           <br />

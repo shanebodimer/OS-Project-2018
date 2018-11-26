@@ -1,4 +1,5 @@
 {
+  "homepage": "http://64.251.149.246/",
   "name": "test",
   "version": "0.1.0",
   "private": true,
@@ -15,6 +16,7 @@
     "react": "^16.2.0",
     "react-copy-to-clipboard": "^5.0.1",
     "react-dom": "^16.2.0",
+    "react-image-magnify": "^2.7.4",
     "react-markdown": "^3.3.4",
     "react-router-dom": "^4.2.2",
     "react-scripts": "^2.0.5",

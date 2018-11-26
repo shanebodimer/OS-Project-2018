@@ -46,7 +46,15 @@ export default class SingleForm extends React.Component {
           title={"Image size"}
           handleChange={this.handleChange}
           value={this.state.size}
-          options={["100x100", "250x250", "500x500", "750x750", "1000x1000"]}
+          options={[
+            "100x100",
+            "250x250",
+            "500x500",
+            "750x750",
+            "1000x1000",
+            "5000x5000",
+            "10000x10000"
+          ]}
         />
 
         <FormGroup>
